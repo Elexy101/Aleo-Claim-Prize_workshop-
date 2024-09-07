@@ -54,3 +54,7 @@ Logic:
 ![Screenshot from 2024-09-07 14-21-59](https://github.com/user-attachments/assets/bb9a9afb-7bd5-43f4-bf6a-6958837bc337)
 
 
+# VIDEO
+[Screencast from 07-09-2024 14:32:10.webm](https://github.com/user-attachments/assets/f6752038-8c92-4f0c-91a0-68bb85c76598)
+
+
