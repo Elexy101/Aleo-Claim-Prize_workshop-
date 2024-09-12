@@ -28,28 +28,30 @@ Logic:
 - It sets a fixed amount of 5,000 tokens (amount: u64 = 5000u64).
 - It creates and returns a new Claim_Prize record with the given owner and the fixed claim amount.
 
-# transfer Function (Transferring Tokens)
-The transfer function allows a user to send a specified amount of tokens from one address to another. It takes an existing Claim_Prize record, calculates the new balances for both the sender and the receiver, and produces two new records: one for the sender (with the remaining balance) and one for the receiver (with the transferred amount).
-
-Function Explanation:
-Parameters:
-
-`token: Claim_Prize:` The token record from which tokens will be sent (i.e., the sender's token).
-
-`to: address:` The address of the recipient.
-
-`amount: u64:` The number of tokens to be transferred.
+# Transition Functions
+`place_bid(bidder: address, amount: u64) -> Bid:`
+- Allows a participant to place a bid.
+- Ensures that the function caller is the same as the bidder.
+- Creates and returns a new Bid record with the bid amount and an initial is_winner set to false.
+- The owner of the Bid record is hardcoded to an auction runner's address.
+  
+`resolve(first: Bid, second: Bid) -> Bid:`
+- Resolves the winner between two bids.
+- Ensures that only the auction runner can call this function.
+- Compares the amounts of the two bids. If the amounts are equal, the first bid wins.
+- Returns the winning Bid.
+  
+`finish(bid: Bid) -> (Bid, Claim_Prize):`
+- Marks the bid as the winning bid by setting is_winner to true.
+- Awards the winning bidder 5,000 tokens through a Claim_Prize record.
+- Returns both the updated winning Bid and the Claim_Prize record.
 
 Logic:
 
-- It checks that the sender's token has a sufficient balance for the transfer by calculating the difference: difference = token.claim_amt - amount.
-- If the balance is insufficient, the operation will fail due to overflow protection (sub ensures no negative results).
-- It creates two new Claim_Prize records:
-
-  `remaining:` This record is for the sender, containing the leftover balance (difference).
-  `transferred:` This record is for the recipient, containing the amount of tokens they are receiving.
-  
-- It returns both the sender's new record (remaining) and the recipient's record (transferred).
+- Bidders place their bids via place_bid.
+- After the bidding period, the auction runner resolves the winner using resolve.
+- The finish function finalizes the auction, returning ownership of the bid to the winning bidder and awarding the prize.
+- The program implements basic auction functionality with the ability to place bids, resolve the winner, and award a prize to the winning bidder.
 
 # SCREENSHOT
 
