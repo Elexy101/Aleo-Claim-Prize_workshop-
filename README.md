@@ -2,7 +2,9 @@
 A simple leo contract program I built to claim a reward, reward is transferrable. Reward is in form of tokens
 
 # DEPLOYMENT LINK
-Deployment Link: https://testnet.aleoscan.io/program?id=aleo_prize.aleo
+Deployment Link: [https://testnet.aleoscan.io/program?id=aleo_prize.aleo](https://testnet.aleoscan.io/program?id=aleo_claim_prize.aleo)
+
+Deployment Transaction ID: at16vz8ganm0tn5jcg826f46nfszfp0088um0hlqwclga56hfjfrgzsgehn7x
 
 # Claim_Prize Record Structure
 
@@ -51,10 +53,11 @@ Logic:
 
 # SCREENSHOT
 
-![Screenshot from 2024-09-07 14-21-59](https://github.com/user-attachments/assets/bb9a9afb-7bd5-43f4-bf6a-6958837bc337)
+![Screenshot from 2024-09-12 05-41-53](https://github.com/user-attachments/assets/c1bbbe60-0f6f-491d-a7ab-9732b2332522)
 
 
 # VIDEO
 [Screencast from 07-09-2024 14:32:10.webm](https://github.com/user-attachments/assets/f6752038-8c92-4f0c-91a0-68bb85c76598)
+
 
 
