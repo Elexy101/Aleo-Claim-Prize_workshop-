@@ -1,5 +1,5 @@
 {
-  "program": "aleo_prize.aleo",
+  "program": "aleo_claim_prize.aleo",
   "version": "0.1.0",
   "description": "",
   "license": "MIT",
